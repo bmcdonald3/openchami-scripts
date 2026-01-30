@@ -3,7 +3,7 @@
 # ==========================================
 # 🔧 CONFIGURATION - EDIT THESE PATHS
 # ==========================================
-METADATA_REPO="$HOME/path/to/cloud-init"
+METADATA_REPO="$HOME/metadata-service"
 BOOT_REPO="$HOME/boot-service"
 NODE_REPO="$HOME/node-service"
 QUICKSTART_DIR="$HOME/deployment-recipes/quickstart"
@@ -17,6 +17,10 @@ NODE_PORT=8082
 # 1. ENVIRONMENT SETUP
 # ==========================================
 echo "Drafting environment from Quickstart..."
+
+# Create Log Directory Explicitly
+mkdir -p "$LOG_DIR"
+echo "📂 Logs will be written to: $LOG_DIR"
 
 if [ ! -f "$QUICKSTART_DIR/.env" ]; then
     echo "❌ Error: Could not find .env file in $QUICKSTART_DIR"
