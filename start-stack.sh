@@ -3,8 +3,8 @@
 # ==========================================
 # 🔧 CONFIGURATION - EDIT THESE PATHS
 # ==========================================
-METADATA_REPO="$HOME/metadata-service"
-BOOT_REPO="$HOME/boot-service"
+METADATA_REPO="$HOME/metadata-service/cmd/server"
+BOOT_REPO="$HOME/boot-service/cmd/server"
 NODE_REPO="$HOME/node-service"
 QUICKSTART_DIR="$HOME/deployment-recipes/quickstart"
 
@@ -54,7 +54,7 @@ mkdir -p logs
 echo "🚀 Starting Metadata Service (Port $METADATA_PORT)..."
 cd "$METADATA_REPO" || exit
 # Note: Adjust flags if your specific version uses different ones
-go run . --port $METADATA_PORT > "$HOME/logs/metadata.log" 2>&1 &
+go run . serve --port $METADATA_PORT > "$HOME/logs/metadata.log" 2>&1 &
 METADATA_PID=$!
 echo $METADATA_PID > "$HOME/logs/metadata.pid"
 
