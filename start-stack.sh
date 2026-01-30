@@ -7,6 +7,7 @@ METADATA_REPO="$HOME/metadata-service/cmd/server"
 BOOT_REPO="$HOME/boot-service/cmd/server"
 NODE_REPO="$HOME/node-service"
 QUICKSTART_DIR="$HOME/deployment-recipes/quickstart"
+LOG_DIR="$HOME/logs"
 
 # Ports for your local services
 METADATA_PORT=8080
@@ -44,9 +45,6 @@ export BSS_DB_NAME="bss" # Default for quickstart
 # Node Service Configs
 export METADATA_URL="http://localhost:$METADATA_PORT"
 export BOOT_URL="http://localhost:$BOOT_PORT"
-
-# Create a logs directory
-mkdir -p logs
 
 # ==========================================
 # 2. START METADATA SERVICE
